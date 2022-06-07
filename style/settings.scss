@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f5f5;
+}
+
+.container {
+    max-width: 90vw;
+    margin: 20px auto;
+    padding-left: 25px;
+    padding-right: 25px;
+
+    h2 {
+        text-align: center;
+        font-size: 1.8rem;
+        color: #444;
+        margin: 50px 0px;
+    }
+}
+
+.header-section {
+    margin-top: -20px;
+    background: radial-gradient(#fff, #eaf2fb);
+}
+
+#burger_box {
+    position: relative;
+    background-color: #1a1a1a;
+    color: white;
+    height: 78vh;
+    width: 20vw;
+    transform: translate(1vw, 590px);
+    opacity: 0.8;
+    margin-top: -500px;
+    display: none;
+    z-index: 2;
+
+    ul {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 8vh;
+        height: 78vh;
+    }
+
+    ul li a {
+        text-decoration: none;
+        color: white;
+    }
+}
+
+#burger_button {
+    cursor: pointer;
+}
+
+.image_product {
+    cursor: pointer;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+img {
+    border-radius: 15px;
+}
+
+figcaption {
+    text-align: center;
+    font-size: small;
+    font-family: 'Indie Flower', cursive;
+}
+
+p {
+    color: #555;
+}
+
+/* Index and products style */
+
+.col-4 {
+    flex-basis: 25%;
+    min-width: 200px;
+    padding: 15px;
+    transition: transform 0.4s;
+
+    img {
+        width: 100%;
+    }
+
+    :hover {
+        transform: translateY(-10px);
+    }
+}
+
+.rating .fa {
+    color: #16a7b4;
+}
+
+/* Index and about style */
+
+#unnamed {
+    width: 100%;
+    padding: 30px 0px;
+    max-width: 300px;
+    margin-left: 5vw;
+}
