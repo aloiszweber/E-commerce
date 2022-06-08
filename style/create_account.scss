@@ -4,27 +4,27 @@
     justify-content: center;
     align-items: center;
     width: 100vw;
-    padding-top: 4vh;
-    padding-bottom: 21.8vh;
+    padding-top: 15px;
+    padding-bottom: 140px;
 
     button {
-        margin-top: 2vh;
+        margin-top: 12px;
         border-radius: 10px;
         background-color: #00d0e5;
         color: white;
         border: none;
-        padding: 1vh;
+        padding: 6px;
         cursor: pointer;
         margin-left: 4vw;
     }
 
     .inputs {
-        margin-bottom: 2vh;
+        margin-bottom: 12px;
     }
 
     .gender {
-        margin-top: 2vh;
-        margin-bottom: 2vh;
+        margin-top: 12px;
+        margin-bottom: 12px;
     }
 
     .gender label {
