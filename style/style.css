@@ -108,7 +108,47 @@ body {
   cursor: pointer;
 }
 
-.row {
+.rowAllProducts {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 85px;
+}
+
+.rowIndex {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 85px;
+}
+
+.rowIndex2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 85px;
+}
+
+.rowIndexIntro {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 85px;
+}
+
+.rowIndexBestProducts {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 85px;
+}
+
+.rowIndexLastProducts {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -131,21 +171,56 @@ p {
 }
 
 /* Index and products style */
-.col-4 {
+.productPageProducts {
   flex-basis: 25%;
   min-width: 200px;
   padding: 15px;
   transition: transform 0.4s;
 }
-.col-4 img {
+.productPageProducts img {
   width: 100%;
 }
-.col-4 :hover {
+.productPageProducts :hover {
   transform: translateY(-10px);
 }
 
-.rating .fa {
-  color: #16a7b4;
+.productIndexBestProducts {
+  flex-basis: 25%;
+  min-width: 200px;
+  padding: 15px;
+  transition: transform 0.4s;
+}
+.productIndexBestProducts img {
+  width: 100%;
+}
+.productIndexBestProducts :hover {
+  transform: translateY(-10px);
+}
+
+.productIndexLastProducts {
+  flex-basis: 25%;
+  min-width: 200px;
+  padding: 15px;
+  transition: transform 0.4s;
+}
+.productIndexLastProducts img {
+  width: 100%;
+}
+.productIndexLastProducts :hover {
+  transform: translateY(-10px);
+}
+
+.productIndex {
+  flex-basis: 25%;
+  min-width: 200px;
+  padding: 15px;
+  transition: transform 0.4s;
+}
+.productIndex img {
+  width: 100%;
+}
+.productIndex :hover {
+  transform: translateY(-10px);
 }
 
 /* Index and about style */
