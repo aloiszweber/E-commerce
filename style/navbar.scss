@@ -42,3 +42,12 @@ nav ul li a {
 #basket {
     cursor: pointer;
 }
+
+
+@media screen and (max-width: 780px) {
+
+    .navbar {
+        margin-top: 150px;
+    }
+
+}
