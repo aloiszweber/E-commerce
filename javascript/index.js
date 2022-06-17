@@ -3,6 +3,12 @@
 const burgerBox = document.getElementById('burger_box');
 const burger = document.getElementById('burger_button');
 
+const continueButton = document.getElementById("continueButton");
+const cancelButton = document.getElementById("cancelButton");
+
+const message = document.getElementsByClassName("popup");
+const header = document.querySelector("#header-section");
+
 
 burger.addEventListener('click', (e) => {
 
@@ -14,8 +20,13 @@ burger.addEventListener('click', (e) => {
     else {
         burger.classList = 'active';
         burgerBox.style.display = "block";
+        header.style.marginTop = '-151px';
     }
 })
+
+if (burger.classList.contains("active")) {
+    header.style.marginTop = '0px';
+}
 
 /*
 
@@ -35,38 +46,15 @@ document.body.addEventListener('click', () => {
 
 */
 
-const continueButton = document.getElementById("continueButton");
-const cancelButton = document.getElementById("cancelButton");
-
-const message = document.getElementsByClassName("popup");
-const header = document.getElementsByClassName("header-section");
-
-let mediaMin470 = window.matchMedia("(min-width:500px)");
-let mediaMax768 = window.matchMedia("(max-width:768px)");
-let mediaMin768 = window.matchMedia("(min-width:768px)");
-
-console.log(message);
-
-
 function popup() {
 
     continueButton.addEventListener('click', () => {
         message[0].style.display = "none";
-        message[0].id = "normal";
-
     })
 
     cancelButton.addEventListener('click', () => {
         window.close();
-        console.log(window);
     })
-
-    window.addEventListener('load', (e) => {
-        if (mediaMin470.matches && mediaMax768.matches) {
-            message[0].style.display = "block";
-        }
-    })
-
 }
 
 popup();
