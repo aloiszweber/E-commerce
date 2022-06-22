@@ -515,16 +515,92 @@ footer {
   font-size: small;
 }
 
-.basket {
+#blockTitleBasket {
+  margin-bottom: 40px;
+}
+
+#basketTitle {
+  margin-left: 30px;
+}
+
+#basketCard {
   display: flex;
   flex-direction: column;
-  padding-left: 2vw;
-  padding-top: 15px;
+  align-items: center;
+  justify-content: center;
   background-color: white;
-  height: 250px;
-  width: 75vw;
+  height: 300px;
+  width: 85vw;
   margin-bottom: 200px;
   margin-left: 2vw;
+}
+
+.injectJS {
+  width: 80vw;
+  height: 255px;
+}
+
+#basketProduct {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 80vw;
+  height: 255px;
+}
+
+#blockImage {
+  display: block;
+  display: flex;
+  align-items: center;
+}
+
+#laurier {
+  width: 200px;
+  height: 240px;
+}
+
+#blockProduct {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 18vw;
+}
+
+#changeProduct {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 16vw;
+}
+
+.center {
+  height: 40px;
+  background-color: white;
+  display: flex;
+}
+
+.quantityProduct {
+  padding: 12.9px;
+  background-color: #dedcde;
+}
+
+.minusButton {
+  width: 36px;
+  height: 40px;
+  color: red;
+  background-color: white;
+  font-size: 900;
+  border: none;
+}
+
+.plusButton {
+  width: 36px;
+  height: 40px;
+  color: red;
+  background-color: white;
+  font-size: 900;
+  border: none;
 }
 
 /*# sourceMappingURL=style.css.map */

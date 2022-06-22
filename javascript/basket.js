@@ -1,3 +1,6 @@
+
+/* 
+
 function saveBasket(basket) {
     localStorage.setItem("basket", JSON.stringify(basket));
 }
@@ -62,3 +65,63 @@ function getTotalPrice() {
     }
     return total;
 }
+
+*/
+
+const productBasket = async () => {
+
+    let response = await fetch("products.json");
+    let data = await response.json();
+    console.log(data);
+
+    var product = document.querySelector('.productPageProducts');
+    console.log(product);
+
+
+    function getBasket() {
+        let basket = (localStorage.getItem("basket"));
+        if (basket == null) {
+            return [];
+        }
+        else {
+            return JSON.parse(basket);
+        }
+    }
+
+    var basket = getBasket();
+
+    data.forEach(element => {
+
+        let cloneproduct = document.importNode(product, true);
+
+        let imageproduct = cloneproduct.querySelector('.image_product');
+        let nameproduct = cloneproduct.querySelector('.nameProduct');
+        let priceproduct = cloneproduct.querySelector('.price');
+
+        console.log(imageproduct);
+        console.log(nameproduct);
+        console.log(priceproduct);
+
+        product.addEventListener('click', () => { /*
+            console.log('added to cart!');
+            localStorage.setItem("product", JSON.stringify(element));
+            let product = (localStorage.getItem("product"));
+            console.log(product);
+            console.log(basket);
+            basket.push(JSON.parse(product));
+
+            basket.forEach(element => {
+
+                console.log('coucou');
+
+            })
+            */
+            console.log('coucou');
+        })
+
+
+    })
+
+}
+
+productBasket();

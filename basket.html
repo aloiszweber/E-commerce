@@ -47,10 +47,39 @@
             </header>
         </div>
     </section>
-    <section class="basket">
-        <h1> Your basket </h1>
-        <hr style="width: 170px;">
+    <!-- beginning content basket -->
+    <section id="basket" class="basket part">
+        <div id="blockTitleBasket" class="blockTitleBasket part">
+            <h2 id="basketTitle">
+                PLEASE ADD PRODUCTS TO CART <br>
+                NO PRODUCTS
+            </h2>
+        </div>
+        <div id="basketCard" class="basketCard part">
+            <div class="injectJS">
+                <div id="basketProduct" class="basketProduct part">
+                    <div id="blockImage">
+                        <img id="laurier" src="images/laurier.png" alt="image by default">
+                    </div>
+                    <div id="blockProduct" class="blockProduct part">
+                        <h2> Product </h2>
+                        <p> vernis </p>
+                        <p> 0E </p>
+                        <p> Ref:0000000 </p>
+                        <p> en Stock </p>
+                    </div>
+                    <div id="changeProduct" class="changeProduct part">
+                        <div class="center">
+                            <button class="minusButton"> - </button>
+                            <span class="quantityProduct"> 0 </span>
+                            <button class="plusButton"> + </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
+    <!-- End content basket -->
     <footer>
         <ul id="footer-row1">
             <li> <a href=""> Blog Tech | </a> </li>
@@ -85,9 +114,10 @@
             </div>
         </ul>
     </footer>
-    <script src="./javascript/index.js">
+    <script type="module" src="./javascript/index.js">
     </script>
     <script src="./javascript/basket.js">
+
     </script>
 </body>
 

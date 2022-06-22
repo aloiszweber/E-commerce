@@ -1,3 +1,5 @@
+
+
 const getAllProducts = async () => {
 
     let response = await fetch("products.json");
@@ -7,6 +9,20 @@ const getAllProducts = async () => {
 
     var product = document.querySelector('.productPageProducts');
     //console.log(product);
+    /*
+        function getBasket() {
+            let basket = (localStorage.getItem("basket"));
+            if (basket == null) {
+                return [];
+            }
+            else {
+                return JSON.parse(basket);
+            }
+        }
+    
+        var basket = getBasket();
+    
+    */
 
     data.forEach(element => {
 
@@ -20,8 +36,32 @@ const getAllProducts = async () => {
         nameproduct.innerHTML = element.name;
         priceproduct.innerHTML = element.price;
 
+        /*
+        cloneproduct.addEventListener('click', () => {
+            console.log('added to cart!');
+            localStorage.setItem("product", JSON.stringify(element));
+            let product = (localStorage.getItem("product"));
+            console.log(product);
+            console.log(basket);
+            basket.push(JSON.parse(product));
+
+            basket.forEach(element => {
+
+                let cloneproduct2 = cloneproduct;
+                console.log(cloneproduct2);
+                console.log(cloneproduct);
+
+                let target2 = document.querySelector('.BasketProducts');
+                console.log(target2);
+                target2.appendChild(cloneproduct2);
+
+            })
+
+        })
+
+        */
+
         let target = document.querySelector('.rowAllProducts');
-        console.log(target);
         target.appendChild(cloneproduct);
 
     });

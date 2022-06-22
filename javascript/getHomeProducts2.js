@@ -21,8 +21,11 @@ const getHomeProducts2 = async () => {
             nameproduct.innerHTML = element.name;
             priceproduct.innerHTML = element.price;
 
+            cloneproduct.addEventListener('click', () => {
+                console.log('added to cart!')
+            })
+
             let target = document.querySelector('.rowIndexLastProducts');
-            console.log(target);
             target.appendChild(cloneproduct);
         }
     });
