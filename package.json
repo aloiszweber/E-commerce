@@ -2,14 +2,19 @@
   "name": "e-commerce",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js",
     "sass": "sass style/index.scss style/style.css -w"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.18.1",
+    "morgan": "^1.10.0",
     "sass": "^1.52.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.18"
   }
 }
