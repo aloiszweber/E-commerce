@@ -1,8 +1,11 @@
+// const basket = require("./../../controllers/basketController.js");
 const getHomeProducts2 = async () => {
-  let response = await fetch("public/json/products.json");
-  let data = await response.json();
+  //modify route to fetch with express route
+  let response = await fetch("api/products");
+  let res = await response.json();
+  let data = res.data.products;
 
-  //console.log(data);
+  // console.log(data);
 
   var product = document.querySelector(".productIndexLastProducts");
   //console.log(product);
@@ -19,8 +22,15 @@ const getHomeProducts2 = async () => {
       nameproduct.innerHTML = element.name;
       priceproduct.innerHTML = element.price;
 
-      cloneproduct.addEventListener("click", () => {
-        console.log("added to cart!");
+      cloneproduct.addEventListener("click", async () => {
+        // console.log("added to cart! 2");
+        let basket = JSON.parse(localStorage.getItem("basket"));
+        if (basket == null) {
+          basket = [];
+        }
+        basket.push(element);
+        localStorage.setItem("basket", JSON.stringify(basket));
+        // TODO show an alert when added to cart
       });
 
       let target = document.querySelector(".rowIndexLastProducts");

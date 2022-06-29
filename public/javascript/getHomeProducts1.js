@@ -1,6 +1,8 @@
 const getHomeProducts1 = async () => {
-  let response = await fetch("public/json/products.json");
-  let data = await response.json();
+  //modify route to fetch with express route
+  let response = await fetch("api/products");
+  let res = await response.json();
+  let data = res.data.products;
 
   //console.log(data);
 
@@ -20,7 +22,7 @@ const getHomeProducts1 = async () => {
       priceproduct.innerHTML = element.price;
 
       cloneproduct.addEventListener("click", () => {
-        console.log("added to cart!");
+        console.log("added to cart! 1");
       });
 
       let target = document.querySelector(".rowIndexBestProducts");

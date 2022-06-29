@@ -4,13 +4,13 @@ const {
   createProduct,
   getProduct,
   checkID,
+  checkBody,
 } = require("./../controllers/productController");
 const router = express.Router();
-// app.use("/api/products", router);
 
 router.param("id", checkID);
 
-router.route("/").get(getAllProducts).post(createProduct);
+router.route("/").get(getAllProducts).post(checkBody, createProduct);
 router.route("/:id").get(getProduct);
 
 module.exports = router;

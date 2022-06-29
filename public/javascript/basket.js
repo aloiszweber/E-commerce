@@ -1,4 +1,3 @@
-
 /* 
 
 function saveBasket(basket) {
@@ -68,60 +67,54 @@ function getTotalPrice() {
 
 */
 
-const productBasket = async () => {
+// const productBasket = async () => {
+//   let response = await fetch("../../dev-data/products.json");
+//   let data = await response.json();
+//   console.log(data);
 
-    let response = await fetch("products.json");
-    let data = await response.json();
-    console.log(data);
+//   var product = document.querySelector(".productPageProducts");
+//   console.log(product);
 
-    var product = document.querySelector('.productPageProducts');
-    console.log(product);
+//   function getBasket() {
+//     let basket = localStorage.getItem("basket");
+//     if (basket == null) {
+//       return [];
+//     } else {
+//       return JSON.parse(basket);
+//     }
+//   }
 
+//   var basket = getBasket();
 
-    function getBasket() {
-        let basket = (localStorage.getItem("basket"));
-        if (basket == null) {
-            return [];
-        }
-        else {
-            return JSON.parse(basket);
-        }
-    }
+//   data.forEach((element) => {
+//     let cloneproduct = document.importNode(product, true);
 
-    var basket = getBasket();
+//     let imageproduct = cloneproduct.querySelector(".image_product");
+//     let nameproduct = cloneproduct.querySelector(".nameProduct");
+//     let priceproduct = cloneproduct.querySelector(".price");
 
-    data.forEach(element => {
+//     console.log(imageproduct);
+//     console.log(nameproduct);
+//     console.log(priceproduct);
 
-        let cloneproduct = document.importNode(product, true);
+//     product.addEventListener("click", () => {
 
-        let imageproduct = cloneproduct.querySelector('.image_product');
-        let nameproduct = cloneproduct.querySelector('.nameProduct');
-        let priceproduct = cloneproduct.querySelector('.price');
+//             console.log('added to cart!');
+//             localStorage.setItem("product", JSON.stringify(element));
+//             let product = (localStorage.getItem("product"));
+//             console.log(product);
+//             console.log(basket);
+//             basket.push(JSON.parse(product));
 
-        console.log(imageproduct);
-        console.log(nameproduct);
-        console.log(priceproduct);
+//             basket.forEach(element => {
 
-        product.addEventListener('click', () => { /*
-            console.log('added to cart!');
-            localStorage.setItem("product", JSON.stringify(element));
-            let product = (localStorage.getItem("product"));
-            console.log(product);
-            console.log(basket);
-            basket.push(JSON.parse(product));
+//                 console.log('coucou');
 
-            basket.forEach(element => {
+//             })
 
-                console.log('coucou');
+//       console.log("coucou");
+//     });
+//   });
+// };
 
-            })
-            */
-            console.log('coucou');
-        })
-
-
-    })
-
-}
-
-productBasket();
+// productBasket();

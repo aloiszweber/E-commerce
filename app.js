@@ -1,19 +1,19 @@
 const express = require("express");
 const morgan = require("morgan");
 const productRouter = require("./routes/productRoutes");
+// const basketRouter = require("./routes/basketRoutes");
 const app = express();
 
+//MIDDLEWARE
+if (process.env.NODE_ENV === "development") {
+  app.use(morgan("dev"));
+}
+
 app.use(express.json());
-app.use(morgan("dev"));
 
-// app.get("/api/products", getAllProducts);
-// app.get("/api/products/:id", getProduct);
-// app.post("/api/products", createProduct);
+app.use(express.static(`${__dirname}/public`));
 
-// refactored in routes/productRoute.js
-// const productRouter = express.Router();
 app.use("/api/products", productRouter);
+// app.use("/basket", basketRouter);
 
-// productRouter.route("/").get(getAllProducts).post(createProduct);
-// productRouter.route("/:id").get(getProduct);
 module.exports = app;

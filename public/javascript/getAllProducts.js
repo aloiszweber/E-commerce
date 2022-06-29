@@ -1,6 +1,7 @@
 const getAllProducts = async () => {
-  let response = await fetch("public/json/products.json");
-  let data = await response.json();
+  let response = await fetch("/api/products");
+  let res = await response.json();
+  let data = res.data.products;
 
   //console.log(data);
 
