@@ -3,7 +3,7 @@ const {
   getAllProducts,
   createProduct,
   getProduct,
-} = require("./../controllers/productController");
+} = require("../controllers/productController");
 const router = express.Router();
 
 // router.param("id", checkID);
