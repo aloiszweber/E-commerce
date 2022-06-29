@@ -1,5 +1,6 @@
 const Product = require("./../models/productModel");
-
+const catchAsync = require("./../utils/catchAsync");
+//TODO add catchAsync and remove catch from functions
 exports.getAllProducts = async (req, res) => {
   try {
     const products = await Product.find();
@@ -34,19 +35,28 @@ exports.getProduct = async (req, res) => {
     });
   }
 };
-exports.createProduct = async (req, res) => {
-  try {
-    const newProduct = await Product.create(req.body);
-    res.status(201).json({
-      status: "success",
-      data: {
-        product: newProduct,
-      },
-    });
-  } catch (err) {
-    res.status(400).json({
-      status: "fail",
-      message: "Invalid data sent!",
-    });
-  }
-};
+
+exports.createProduct = catchAsync(async (req, res, next) => {
+  const newProduct = await Product.create(req.body);
+  res.status(201).json({
+    status: "success",
+    data: {
+      product: newProduct,
+    },
+  });
+
+  // try {
+  //   const newProduct = await Product.create(req.body);
+  //   res.status(201).json({
+  //     status: "success",
+  //     data: {
+  //       product: newProduct,
+  //     },
+  //   });
+  // } catch (err) {
+  //   res.status(400).json({
+  //     status: "fail",
+  //     message: "Invalid data sent!",
+  //   });
+  // }
+});
