@@ -1,3 +1,5 @@
+// This file will insert the data from the json file to mongoDB
+// check config.env for correct connection datas to DB then run: node dev-data/import-dev-data.js
 const fs = require("fs");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
