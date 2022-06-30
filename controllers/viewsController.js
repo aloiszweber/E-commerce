@@ -11,3 +11,8 @@ exports.getIndex = async (req, res, next) => {
     lastProducts,
   });
 };
+exports.getBasket = async (req, res, next) => {
+  res.status(200).render("basket", {
+    title: "Basket",
+  });
+};

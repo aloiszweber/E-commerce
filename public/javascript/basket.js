@@ -13,7 +13,9 @@ function getBasket() {
 
 export function addBasket(product) {
   let basket = getBasket();
-  let foundProduct = basket.find((p) => p.id == product.id);
+  //we find by name instead of id or _id
+  let foundProduct = basket.find((p) => p.name == product.name);
+  console.log(foundProduct);
   if (foundProduct != undefined) {
     foundProduct.quantity++;
   } else {
@@ -58,6 +60,32 @@ function getTotalPrice() {
     total += product.quantity * product.price;
   }
   return total;
+}
+
+const basketCard = document.getElementById("basketProductList");
+const basket = getBasket();
+for (let i = 0; i < basket.length; i++) {
+  basketCard.innerHTML += `
+        <div id="basketProduct" class="basketProduct part">
+            <div id="blockImage">
+                <img id="laurier" src="${basket[i].image}" alt="image by default">
+            </div>
+            <div id="blockProduct" class="blockProduct part">
+                <h2> Product </h2>
+                <p> ${basket[i].name} </p>
+                <p> ${basket[i].price} </p>
+                <p> Ref:${basket[i]._id} </p>
+                <p> en Stock </p>
+            </div>
+            <div id="changeProduct" class="changeProduct part">
+                <div class="center">
+                    <button class="minusButton"> - </button>
+                    <span class="quantityProduct"> ${basket[i].quantity} </span>
+                    <button class="plusButton"> + </button>
+                </div>
+            </div>
+        </div>
+  `;
 }
 
 // const productBasket = async () => {

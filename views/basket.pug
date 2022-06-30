@@ -1,0 +1,26 @@
+extend base.pug
+block content
+    section.basket.part(id='basket')
+        div.blockTitleBasket.part(id='blockTitleBasket')
+            h2(id='basketTitle') PLEASE ADD PRODUCTS TO CART 
+                br 
+                |NO PRODUCTS
+        div.basketCard.part(id='basketCard')
+            div.injectJS(id='basketProductList')
+            //-     div.basketProduct.part(id='basketProduct')
+            //-         div(id='blockImage')
+            //-             img(id='laurier' src=`${product.image}` alt=`${product.name}`)
+            //-         div.blockProduct.part(id='blockProduct')
+            //-             h2 Product
+            //-             p product.name
+            //-             p product.price
+            //-             p Ref:1 product.id
+            //-             p en Stock 
+            //-         div.changeProduct.part(id='changeProduct')
+            //-             .center 
+            //-                 button.minusButton -
+            //-                 span.quantityProduct product.quantity
+            //-                 button.plusButton +
+block script 
+    script(type='module' src='javascript/index.js')
+    script(type='module' src='javascript/basket.js')

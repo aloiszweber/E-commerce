@@ -3,7 +3,7 @@ section.featured-products
         h2 Our last products
         div.rowIndexLastProducts
             each product in lastProducts
-                div.productIndexLastProducts
+                div.productIndexLastProducts(id=`${product.id}`)
                     img.image_product(id='product1' src=`${product.image}` alt=`${product.name}`)
                     h3.nameProduct= product.name
                     p.price= product.price

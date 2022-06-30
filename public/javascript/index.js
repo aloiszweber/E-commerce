@@ -25,18 +25,27 @@ if (burger.classList.contains("active")) {
 }
 
 //add to cart listeners
-const productCards = document.getElementsByClassName(
+const addToBasketListener = (domEL) => {
+  for (let i = 0; i < domEL.length; i++) {
+    domEL[i].addEventListener("click", (e) => {
+      e.preventDefault();
+      fetch(`api/products/${domEL[i].id}`)
+        .then((res) => res.json())
+        .then((data) => {
+          addBasket(data.data.product);
+          // console.log(data.data.product._id);
+        });
+    });
+  }
+};
+const bestProductCards = document.getElementsByClassName(
   "productIndexBestProducts"
 );
-for (let i = 0; i < productCards.length; i++) {
-  productCards[i].addEventListener("click", () => {
-    fetch(`api/products/${productCards[i].id}`)
-      .then((res) => res.json())
-      .then((data) => {
-        addBasket(data.data.product);
-      });
-  });
-}
+addToBasketListener(bestProductCards);
+const lastProductCards = document.getElementsByClassName(
+  "productIndexLastProducts"
+);
+addToBasketListener(lastProductCards);
 
 /*
 
