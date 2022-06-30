@@ -1,5 +1,5 @@
-exports.getBasket = () => {
-  let basket = localStorage.getItem("basket");
+const getBasket = () => {
+  let basket = window.localStorage.getItem("basket");
   if (basket == null) {
     return [];
   } else {
@@ -7,7 +7,7 @@ exports.getBasket = () => {
   }
 };
 
-exports.addToBasket = (req, res) => {
+exports.addToBasket = () => {
   basket = getBasket();
   console.log(basket);
 };

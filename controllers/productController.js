@@ -1,7 +1,6 @@
 const Product = require("./../models/productModel");
 const catchAsync = require("./../utils/catchAsync");
-//TODO add catchAsync and remove catch from functions
-//remember to add next to all functions
+
 exports.getAllProducts = catchAsync(async (req, res, next) => {
   const products = await Product.find();
   res.status(200).json({
@@ -15,6 +14,7 @@ exports.getAllProducts = catchAsync(async (req, res, next) => {
 exports.getProduct = catchAsync(async (req, res, next) => {
   const product = await Product.findById(req.params.id);
   //could use Product.findOne({id:req.params.id})
+
   res.status(200).json({
     status: "success",
     data: {

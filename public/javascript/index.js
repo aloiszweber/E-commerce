@@ -1,5 +1,5 @@
+import { addBasket } from "./basket.js";
 // code for the burger menu
-
 const burgerBox = document.getElementById("burger_box");
 const burger = document.getElementById("burger_button");
 
@@ -22,6 +22,20 @@ burger.addEventListener("click", (e) => {
 
 if (burger.classList.contains("active")) {
   header.style.marginTop = "0px";
+}
+
+//add to cart listeners
+const productCards = document.getElementsByClassName(
+  "productIndexBestProducts"
+);
+for (let i = 0; i < productCards.length; i++) {
+  productCards[i].addEventListener("click", () => {
+    fetch(`api/products/${productCards[i].id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        addBasket(data.data.product);
+      });
+  });
 }
 
 /*

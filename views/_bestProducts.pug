@@ -3,7 +3,8 @@ section.featured-products
         h2 Best products
         div.rowIndexBestProducts
             each product in bestProducts
-                div.productIndexBestProducts
+                div.productIndexBestProducts(id=`${product.id}`)
                     img.image_product(id='product1' src=`${product.image}` alt=`${product.name}`)
                     h3.nameProduct= product.name
-                    p.price= product.price.Intl.NumberFormat('fr-FR',{style:'currency',currency:'EUR'})
+                    p.price= product.price
+                    //- p.price= product.price.Intl.NumberFormat('fr-FR',{style:'currency',currency:'EUR'})
